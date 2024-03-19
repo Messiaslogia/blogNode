@@ -1,14 +1,16 @@
 const Sequelize = require("sequelize");
-const connection = ("../database/database");
+const connection = require("../database/database"); // Corrigido para importar a conexão corretamente
 
 const Category = connection.define('categories', {
-    title:{
+    title: {
         type: Sequelize.STRING,
         allowNull: false
-    }, slug: {
+    },
+    slug: {
         type: Sequelize.STRING,
-        allNull: false
+        allowNull: false // Corrigido de 'allNull' para 'allowNull'
     }
-})
+});
 
+// Category.sync({ force: true });
 module.exports = Category;
