@@ -35,7 +35,10 @@ app.use("/", articlesController);
 
 
 app.get("/", (req, res) =>{
-    res.render("index");
+    Article.findAll().then(articles => {
+        console.log(articles)
+        res.render("index", {articles: articles});
+    })
 })
 
 
