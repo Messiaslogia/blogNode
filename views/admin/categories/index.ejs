@@ -23,12 +23,12 @@
                     <th><%= category.slug %></th>
                     <th>
 
-                        <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning">Editar</a>
+                    <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning">Editar</a>
 
                     <form action="/categories/delete" method="post" style="display: inline;" onsubmit="confirmarDelecao(event, this, )">
                             <input type="hidden" name="id" value="<%= category.id %>">
                             <button class="btn btn-danger">Deletar</button>
-                        </form>
+                    </form>
                     </th>
                 </tr>
             <% }) %>
